@@ -1,0 +1,15 @@
+arch: Print machine architecture
+x86_64
+
+uptime: Tell how long the system has been running
+14:37:13 up  4:13,  1 user,  load average: 6.45, 5.43, 4.37
+
+free: Disply amount of free and used memory in the system
+              total        used        free      shared  buff/cache   available
+Mem:       20235744    17364616      217700      264416     2653428     2261008
+Swap:      19999740        7424    19992316
+
+pwd: Print name of current working directory
+/home/sobhan
+
+exit: Close the terminal
