@@ -47,7 +47,7 @@ class Enemy(arcade.Sprite):
 
     def __init__(self, s):
        super().__init__(':resources:images/space_shooter/playerShip1_green.png')
-       self.center_x = random.randint(0,SCREEN_WIDTH)
+       self.center_x = random.randint(1, SCREEN_WIDTH - 1)
        self.center_y = SCREEN_HEIGHT + 2
        self.speed = s
        self.angle = 180
@@ -88,8 +88,8 @@ class Game(arcade.Window):
     def on_draw(self):
         arcade.start_render()
         if self.me.health <= 0:
-            arcade.set_background_color(arcade.color.BLUE)
-            arcade.draw_text('Game Over!', 350, SCREEN_WIDTH//2, arcade.color.PURPLE, 30)
+            arcade.set_background_color(arcade.color.GRANNY_SMITH_APPLE)
+            arcade.draw_text('Game Over! Sorry :(', 30, SCREEN_WIDTH // 2, arcade.color.PURPLE, 30)
         else:
             arcade.draw_lrwh_rectangle_textured(0 , 0, SCREEN_WIDTH, SCREEN_WIDTH,self.background_image)
             self.me.draw()
@@ -102,7 +102,7 @@ class Game(arcade.Window):
         for health in range(self.me.health):
             health_image = arcade.load_texture('health.png')
             arcade.draw_lrwh_rectangle_textured(5 + health * 21 , 12 , 22 , 22 , health_image)
-        arcade.draw_text(f'Score= {self.me.score}',790, 18 , arcade.color.BLACK , 18)
+        arcade.draw_text(f'Score= {self.me.score}', 680, 18 , arcade.color.WHITE_SMOKE , 18)
 
     def on_update(self, delta_time):
         self.end_time = time.time()
